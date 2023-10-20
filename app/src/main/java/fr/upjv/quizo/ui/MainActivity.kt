@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -24,7 +25,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import fr.upjv.quizo.R
+import fr.upjv.quizo.ui.navigation.HomeNavHost
 import fr.upjv.quizo.ui.theme.QuizoTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -35,6 +38,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            val navController = rememberNavController()
             QuizoTheme {
                 Scaffold(
                     topBar = {
@@ -57,11 +61,11 @@ class MainActivity : ComponentActivity() {
                         BottomAppBar { Text("Work in progress") }
                     },
                 )
-                { paddingValues ->
-                    Text(
-                        modifier = Modifier.padding(paddingValues),
-                        text = "content"
-                    )
+                {
+                    Box(modifier = Modifier.fillMaxSize().padding(it).background(DarkGrey))
+                    {
+                        HomeNavHost(navController = navController)
+                    }
                 }
 
             }

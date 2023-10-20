@@ -70,4 +70,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
     implementation("com.google.firebase:firebase-messaging-ktx")
+    implementation("androidx.navigation:navigation-runtime-ktx:2.4.0")
+    implementation("androidx.navigation:navigation-compose:2.4.0")
+    implementation("androidx.navigation:navigation-common-ktx:2.4.0")
+
 }
