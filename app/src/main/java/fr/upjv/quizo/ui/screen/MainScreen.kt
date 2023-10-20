@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import fr.upjv.quizo.ui.theme.Palered
 
+//Definit le menu principal
 @Composable
 fun MainScreen(
     onButtonClick: () -> Unit,

@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import fr.upjv.quizo.ui.screen.InformationScreen
 import fr.upjv.quizo.ui.screen.MainScreen
 
 object NavigationPath {
@@ -33,6 +34,14 @@ fun NavGraphBuilder.addMainScreenNav(
     }
 }
 
+fun NavGraphBuilder.addInformationScreenNavigation() {
+    composable(
+        route = NavigationPath.INFORMATION_SCREEN,
+    ) {
+        InformationScreen()
+    }
+}
+
 
 @Composable
 fun HomeNavHost(
@@ -46,7 +55,7 @@ fun HomeNavHost(
             onButtonClick = {navController.navigate(NavigationPath.INFORMATION_SCREEN)},
             onButtonClick2 = {navController.navigate(NavigationPath.QUIZ_SCREEN)}
         )
-        //addListScreenNavigation()
+        addInformationScreenNavigation()
         //addQuoteScreenNavigation()
     }
 }
