@@ -12,6 +12,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -42,18 +43,23 @@ class MainActivity : ComponentActivity() {
             QuizoTheme {
                 Scaffold(
                     topBar = {
-                        TopAppBar( //Barre de navigation en haut de l'ecran
+                        //Barre de navigation en haut de l'ecran
+                        TopAppBar(
                             navigationIcon = {
-                                Icon(
-                                    imageVector = Icons.Default.ArrowBack,
-                                    contentDescription = null,
-                                    tint = Color.White
-                                )
+                                IconButton(onClick = {
+                                    navController.popBackStack()
+                                }) {
+                                    Icon(
+                                        imageVector = Icons.Default.ArrowBack,
+                                        contentDescription = null,
+                                        tint = Color.White
+                                    ) //Fleche de retour du header
+                                }
                             },
                             title = {
                                 Text(text = stringResource(id = R.string.app_name),
                                     color = Color.White)
-                                    },
+                                    },  //Titre du "header" de l'application
                             colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = DarkGrey)
                         )
                     },
@@ -62,7 +68,10 @@ class MainActivity : ComponentActivity() {
                     },
                 )
                 {
-                    Box(modifier = Modifier.fillMaxSize().padding(it).background(DarkGrey))
+                    Box(modifier = Modifier
+                        .fillMaxSize()
+                        .padding(it)
+                        .background(DarkGrey))
                     {
                         HomeNavHost(navController = navController)
                     }
