@@ -8,7 +8,7 @@ import fr.upjv.quizo.data.model.QuizzEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface ChuckNorrisDao {
+interface QuizzDao {
 
 
     @Query("SELECT * FROM quizo_table ORDER BY question ASC")
