@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "quizo_table")
-data class ChuckNorrisEntity(
+data class QuizzEntity(
     @ColumnInfo(name = "question")
     val question: String,
 
