@@ -8,37 +8,30 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import fr.upjv.quizo.ui.screen.InformationScreen
 import fr.upjv.quizo.ui.screen.MainScreen
+import fr.upjv.quizo.ui.screen.QuizoScreen
 
 object NavigationPath {
     const val MAIN_SCREEN = "main_screen"
-    const val INFORMATION_SCREEN = "Information_screen"
     const val QUIZ_SCREEN = "quiz_screen"
 }
 
 fun NavGraphBuilder.addMainScreenNav(
     onButtonClick: () -> Unit,
-    onButtonClick2: () -> Unit,
 ) {
     composable(
         route = NavigationPath.MAIN_SCREEN
     ) {
-        MainScreen(
-            onButtonClick = {
-                onButtonClick()
-            },
-
-            onButtonClick2 = {
-                onButtonClick2()
-            }
-        )
+        MainScreen {
+            onButtonClick()
+        }
     }
 }
 
-fun NavGraphBuilder.addInformationScreenNavigation() {
+fun NavGraphBuilder.addQuizoScreenNavigation(){
     composable(
-        route = NavigationPath.INFORMATION_SCREEN,
+        route = NavigationPath.QUIZ_SCREEN,
     ) {
-        InformationScreen()
+        QuizoScreen()
     }
 }
 
@@ -52,10 +45,8 @@ fun HomeNavHost(
         startDestination = NavigationPath.MAIN_SCREEN,
     ) {
         addMainScreenNav(
-            onButtonClick = {navController.navigate(NavigationPath.INFORMATION_SCREEN)},
-            onButtonClick2 = {navController.navigate(NavigationPath.QUIZ_SCREEN)}
+            onButtonClick = {navController.navigate(NavigationPath.QUIZ_SCREEN)}
         )
-        addInformationScreenNavigation()
-        //addQuoteScreenNavigation()
+        addQuizoScreenNavigation()
     }
 }
