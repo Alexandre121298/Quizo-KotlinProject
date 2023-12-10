@@ -6,7 +6,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import fr.upjv.quizo.ui.screen.InformationScreen
 import fr.upjv.quizo.ui.screen.MainScreen
 import fr.upjv.quizo.ui.screen.QuizoScreen
 

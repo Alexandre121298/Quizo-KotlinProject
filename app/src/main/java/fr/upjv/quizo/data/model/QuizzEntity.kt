@@ -10,11 +10,11 @@ data class QuizzEntity(
     val question: String,
 
 
-    @ColumnInfo(name = "reponses")
-    val reponses: List<String>,
-
-    @ColumnInfo(name = "reponsesCorrectes")
-    val reponsesCorrectes: List<String>
+//    @ColumnInfo(name = "reponses")
+//    val reponses: List<String>,
+//
+//    @ColumnInfo(name = "reponsesCorrectes")
+//    val reponsesCorrectes: List<String>
 ){
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0

@@ -2,24 +2,44 @@ package fr.upjv.quizo.ui.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import fr.upjv.quizo.ui.viewmodel.QuizzViewModel
 
 @Composable
 fun QuizoScreen() {
 
-    Column(
-        modifier = Modifier.fillMaxSize(),
+    val viewModel: QuizzViewModel = viewModel()
+    //val list = viewModel.questions.collectAsState(emptyList()).value
+    val list = viewModel.questions.toString()
+
+
+    LazyColumn(
+        modifier = Modifier.padding(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-    )
-    {
-        Text(
-            text = "Alexandre Dubois",
-            color = Color.White
-        )
+    ) {
+//        items(count = list.size) {
+//            Text(text = "Name = ${list[it].question}")
+//        }
+        item { Text(text = list) }
+        item {
+            Button(
+                content = { Text("Add") },
+                onClick = { viewModel.insertNewQuestion() }
+            )
+            Button(
+                content = { Text("Delete") },
+                onClick = { viewModel.deleteAllQuestions() }
+            )
+        }
     }
 }

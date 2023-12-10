@@ -13,5 +13,5 @@ import fr.upjv.quizo.data.dao.QuizzDao
     exportSchema = false
 )
 abstract class CustomRoomDatabase : RoomDatabase() {
-    abstract fun chuckNorrisDao(): QuizzDao
+    abstract fun quizzDao(): QuizzDao
 }

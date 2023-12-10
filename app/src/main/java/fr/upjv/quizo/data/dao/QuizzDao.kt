@@ -16,7 +16,7 @@ interface QuizzDao {
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(chuckNorrisEntity: QuizzEntity)
+    fun insert(quizzEntity: QuizzEntity)
 
 
     @Query("DELETE FROM quizo_table")
