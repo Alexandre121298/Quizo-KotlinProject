@@ -9,8 +9,10 @@ sealed interface QuizzItemUI
 {
     data class QuizzItem (
         val question: String,
-//    val reponses: List<String>,
-//    val reponseCorrecte: List<String>
+        val reponseA: String,
+        val reponseB: String,
+        val reponseC: String,
+        val reponseD: String,
     ):QuizzItemUI
 
     data class Header(
@@ -27,8 +29,10 @@ fun List<QuizzObject>.toUI(): List<QuizzItemUI.QuizzItem>{
     return map { item ->
         QuizzItemUI.QuizzItem(
             question = item.Question,
-//            reponses = item.Reponses,
-//            reponseCorrecte = item.ReponsesCorrectes,
+            reponseA = item.ReponseA,
+            reponseB = item.ReponseB,
+            reponseC = item.ReponseC,
+            reponseD = item.ReponseD,
         )
     }
 }

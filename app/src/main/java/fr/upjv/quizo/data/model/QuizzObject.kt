@@ -4,8 +4,10 @@ data class QuizzObject(
     val Question: String,
     val Category: String,
     val Timestamp: Long,
-//    val Reponses: List<String>,
-//    val ReponsesCorrectes: List<String>,
+    val ReponseA: String,
+    val ReponseB: String,
+    val ReponseC: String,
+    val ReponseD: String,
 )
 
 fun List<QuizzEntity>.toDomain(): List<QuizzObject> {
@@ -14,8 +16,10 @@ fun List<QuizzEntity>.toDomain(): List<QuizzObject> {
             Question = eachEntity.question,
             Category = eachEntity.category,
             Timestamp = eachEntity.timestamp,
-//            Reponses = eachEntity.reponses,
-//            ReponsesCorrectes = eachEntity.reponsesCorrectes,
+            ReponseA = eachEntity.reponseA,
+            ReponseB = eachEntity.reponseB,
+            ReponseC = eachEntity.reponseC,
+            ReponseD = eachEntity.reponseD,
         )
     }
 }

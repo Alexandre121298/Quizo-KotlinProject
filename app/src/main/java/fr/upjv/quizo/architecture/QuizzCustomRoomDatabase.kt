@@ -9,7 +9,7 @@ import fr.upjv.quizo.data.dao.QuizzDao
     entities = [
         QuizzEntity::class,
     ],
-    version = 2,
+    version = 4,
     exportSchema = false
 )
 abstract class CustomRoomDatabase : RoomDatabase() {

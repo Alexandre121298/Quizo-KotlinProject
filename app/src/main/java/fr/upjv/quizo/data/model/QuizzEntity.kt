@@ -15,13 +15,19 @@ data class QuizzEntity(
     val category: String,
 
     @ColumnInfo(name = "time_stamp")
-    val timestamp: Long
+    val timestamp: Long,
 
-//    @ColumnInfo(name = "reponses")
-//    val reponses: List<String>,
-//
-//    @ColumnInfo(name = "reponsesCorrectes")
-//    val reponsesCorrectes: List<String>
+    @ColumnInfo(name = "reponse_a")
+    val reponseA: String,
+
+    @ColumnInfo(name = "reponse_b")
+    val reponseB: String,
+
+    @ColumnInfo(name = "reponse_c")
+    val reponseC: String,
+
+    @ColumnInfo(name = "reponse_d")
+    val reponseD: String,
 ){
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0

@@ -13,23 +13,29 @@ data class QuizzDto(
     @SerializedName("category")
     val category: String,
 
-//    @Expose
-//    @SerializedName("answers")
-//    val reponses: List<String>,
-
-//    @Expose
-//    @SerializedName("correct_answers")
-//    val reponsesCorrectes: List<String>,
+    @Expose
+    @SerializedName("answers")
+    val answers: AnswersDto,
 )
 
 
-//fun QuizzDto.toRoom(): QuizzEntity {
-//    return QuizzEntity(
-//        question = question,
-//        reponses = reponses,
-//        reponsesCorrectes = reponsesCorrectes
-//    )
-//}
+data class AnswersDto(
+    @Expose
+    @SerializedName("answer_a")
+    val answerA: String,
+
+    @Expose
+    @SerializedName("answer_b")
+    val answerB: String,
+
+    @Expose
+    @SerializedName("answer_c")
+    val answerC: String,
+
+    @Expose
+    @SerializedName("answer_d")
+    val answerD: String,
+)
 
 fun List<QuizzDto>.toRoom(): QuizzEntity {
     return this.map { quizzDto ->
@@ -37,9 +43,10 @@ fun List<QuizzDto>.toRoom(): QuizzEntity {
             question = quizzDto.question,
             category = quizzDto.category,
             timestamp = System.currentTimeMillis(),
-            // Définissez les autres attributs en conséquence
-            // reponses = quizzDto.reponses,
-            // reponsesCorrectes = quizzDto.reponsesCorrectes
+            reponseA = quizzDto.answers.answerA,
+            reponseB = quizzDto.answers.answerB,
+            reponseC = quizzDto.answers.answerC,
+            reponseD = quizzDto.answers.answerD,
         )
     }.first()
 }
