@@ -8,6 +8,14 @@ data class QuizzItemUi (
 //    val reponseCorrecte: List<String>
 )
 
+data class Header(
+    val category: String,
+)
+
+data class Footer(
+    val timestamp: Long,
+)
+
 fun List<QuizzObject>.toUI(): List<QuizzItemUi>{
     return map { item ->
         QuizzItemUi(
