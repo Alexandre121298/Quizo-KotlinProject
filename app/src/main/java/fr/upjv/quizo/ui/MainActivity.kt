@@ -63,9 +63,6 @@ class MainActivity : ComponentActivity() {
                             colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = DarkGrey)
                         )
                     },
-                    bottomBar = {
-                        BottomAppBar { Text("Work in progress") }
-                    },
                 )
                 {
                     Box(modifier = Modifier

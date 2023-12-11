@@ -57,5 +57,16 @@ fun MainScreen(
             modifier = Modifier.padding(8.dp)
         )
 
+        Button(
+            content = {
+                Text("Go to Authent Screen")
+            },
+            onClick = {
+                onButtonClick()
+            },
+            colors =  ButtonDefaults.buttonColors(containerColor = Palered),
+            modifier = Modifier.padding(8.dp)
+        )
+
     }
 }
