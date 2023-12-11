@@ -7,25 +7,25 @@ import fr.upjv.quizo.data.model.QuizzObject
 
 sealed interface QuizzItemUI
 {
-    data class QuizzItemUi (
+    data class QuizzItem (
         val question: String,
 //    val reponses: List<String>,
 //    val reponseCorrecte: List<String>
-    )
+    ):QuizzItemUI
 
     data class Header(
         val category: String,
-    )
+    ):QuizzItemUI
 
     data class Footer(
         val timestamp: Long,
-    )
+    ):QuizzItemUI
 }
 
 
-fun List<QuizzObject>.toUI(): List<QuizzItemUI.QuizzItemUi>{
+fun List<QuizzObject>.toUI(): List<QuizzItemUI.QuizzItem>{
     return map { item ->
-        QuizzItemUI.QuizzItemUi(
+        QuizzItemUI.QuizzItem(
             question = item.Question,
 //            reponses = item.Reponses,
 //            reponseCorrecte = item.ReponsesCorrectes,
