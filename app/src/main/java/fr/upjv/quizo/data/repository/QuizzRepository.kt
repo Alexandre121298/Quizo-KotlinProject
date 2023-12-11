@@ -1,5 +1,6 @@
 package fr.upjv.quizo.data.repository
 
+import android.util.Log
 import fr.upjv.quizo.architecture.CustomApplication
 import fr.upjv.quizo.architecture.RetrofitBuilder
 import fr.upjv.quizo.data.dao.QuizzDao
@@ -14,20 +15,17 @@ class QuizzRepository {
     private val quizzDao = CustomApplication.instance.mApplicationDatabase.quizzDao()
 
     suspend fun fetchData(){
-//        quizzDao.insert(RetrofitBuilder.getQuizz().getRandomQuestion().toRoom())
+        quizzDao.insert(RetrofitBuilder.getQuizz().getRandomQuestion().toRoom())
+        Log.d("Question", RetrofitBuilder.getQuizz().getRandomQuestion().toString())
     }
 
     fun deleteAll() {
-//        quizzDao.deleteAll()
+        quizzDao.deleteAll()
     }
 
-//    fun selectAll(): Flow<List<QuizzObject>> {
-//        return quizzDao.selectAll().map { list ->
-//            list.toDomain()
-//        }
-//    }
-
-    fun selectAll(): String {
-        return "test Repository"
+    fun selectAll(): Flow<List<QuizzObject>> {
+        return quizzDao.selectAll().map { list ->
+            list.toDomain()
+        }
     }
 }

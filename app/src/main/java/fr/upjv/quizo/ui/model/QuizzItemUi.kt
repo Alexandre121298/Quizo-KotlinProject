@@ -8,16 +8,12 @@ data class QuizzItemUi (
 //    val reponseCorrecte: List<String>
 )
 
-//fun List<QuizzObject>.toUI(): List<QuizzItemUi>{
-//    return map { item ->
-//        QuizzItemUi(
-//            question = item.Question,
-////            reponses = item.Reponses,
-////            reponseCorrecte = item.ReponsesCorrectes,
-//        )
-//    }
-//}
-
-fun List<QuizzObject>.toUI(): String{
-    return "Test ItemUi"
+fun List<QuizzObject>.toUI(): List<QuizzItemUi>{
+    return map { item ->
+        QuizzItemUi(
+            question = item.Question,
+//            reponses = item.Reponses,
+//            reponseCorrecte = item.ReponsesCorrectes,
+        )
+    }
 }

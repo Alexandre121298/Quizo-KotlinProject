@@ -18,10 +18,21 @@ data class QuizzDto(
 )
 
 
-fun QuizzDto.toRoom(): QuizzEntity {
-    return QuizzEntity(
-        question = question,
+//fun QuizzDto.toRoom(): QuizzEntity {
+//    return QuizzEntity(
+//        question = question,
 //        reponses = reponses,
 //        reponsesCorrectes = reponsesCorrectes
-    )
+//    )
+//}
+
+fun List<QuizzDto>.toRoom(): QuizzEntity {
+    return this.map { quizzDto ->
+        QuizzEntity(
+            question = quizzDto.question,
+            // Définissez les autres attributs en conséquence
+            // reponses = quizzDto.reponses,
+            // reponsesCorrectes = quizzDto.reponsesCorrectes
+        )
+    }.first()
 }

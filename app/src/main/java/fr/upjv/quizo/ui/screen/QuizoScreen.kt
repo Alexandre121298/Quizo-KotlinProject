@@ -11,6 +11,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import fr.upjv.quizo.ui.viewmodel.QuizzViewModel
@@ -19,18 +20,20 @@ import fr.upjv.quizo.ui.viewmodel.QuizzViewModel
 fun QuizoScreen() {
 
     val viewModel: QuizzViewModel = viewModel()
-    //val list = viewModel.questions.collectAsState(emptyList()).value
-    val list = viewModel.questions.toString()
+    val list = viewModel.questions.collectAsState(emptyList()).value
 
 
     LazyColumn(
         modifier = Modifier.padding(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-//        items(count = list.size) {
-//            Text(text = "Name = ${list[it].question}")
-//        }
-        item { Text(text = list) }
+        items(count = list.size) {
+            Text(text = "Name = ${list[it].question}",
+                 style = TextStyle(
+                     color = Color.White
+                 ),
+            )
+        }
         item {
             Button(
                 content = { Text("Add") },
