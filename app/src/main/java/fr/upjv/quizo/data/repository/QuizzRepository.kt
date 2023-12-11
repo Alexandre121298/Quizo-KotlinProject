@@ -16,7 +16,6 @@ class QuizzRepository {
 
     suspend fun fetchData(){
         quizzDao.insert(RetrofitBuilder.getQuizz().getRandomQuestion().toRoom())
-        Log.d("Question", RetrofitBuilder.getQuizz().getRandomQuestion().toString())
     }
 
     fun deleteAll() {

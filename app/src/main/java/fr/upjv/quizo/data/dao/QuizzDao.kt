@@ -14,7 +14,6 @@ interface QuizzDao {
     @Query("SELECT * FROM quizo_table ORDER BY question ASC")
     fun selectAll(): Flow<List<QuizzEntity>>
 
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(quizzEntity: QuizzEntity)
 

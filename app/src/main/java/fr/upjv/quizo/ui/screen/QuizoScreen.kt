@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import fr.upjv.quizo.ui.model.QuizzItemUI
 import fr.upjv.quizo.ui.viewmodel.QuizzViewModel
 
 @Composable
@@ -28,7 +29,7 @@ fun QuizoScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         items(count = list.size) {
-            Text(text = "Name = ${list[it].question}",
+            Text(text = "${list[it].question}",
                  style = TextStyle(
                      color = Color.White
                  ),

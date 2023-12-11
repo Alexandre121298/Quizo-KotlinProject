@@ -23,7 +23,6 @@ class QuizzViewModel : ViewModel() {
     fun insertNewQuestion(){
         viewModelScope.launch(Dispatchers.IO){
             quizzRepository.fetchData()
-            Log.d("Insert Question", "le fetchData est passé")
         }
     }
 
