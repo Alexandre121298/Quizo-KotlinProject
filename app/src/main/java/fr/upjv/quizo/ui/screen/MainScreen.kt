@@ -20,6 +20,7 @@ import fr.upjv.quizo.ui.theme.Palered
 @Composable
 fun MainScreen(
     onButtonClick: () -> Unit,
+    onButtonAuthentClick: () -> Unit,
 ) {
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -62,7 +63,7 @@ fun MainScreen(
                 Text("Go to Authent Screen")
             },
             onClick = {
-                onButtonClick()
+                onButtonAuthentClick()
             },
             colors =  ButtonDefaults.buttonColors(containerColor = Palered),
             modifier = Modifier.padding(8.dp)
