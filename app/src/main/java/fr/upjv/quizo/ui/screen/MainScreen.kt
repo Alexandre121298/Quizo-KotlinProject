@@ -49,8 +49,18 @@ fun MainScreen(
             modifier = Modifier.padding(16.dp)
         )
         
-        Text( stringResource(id = R.string.Nightcity))
-        Text( stringResource(id = R.string.secondtext))
+        Text(
+            stringResource(id = R.string.Nightcity),
+            style = TextStyle(
+                color = Color.White
+            ),
+        )
+        Text(
+            stringResource(id = R.string.secondtext),
+            style = TextStyle(
+                color = Color.White
+            ),
+        )
         
         Button(
             content = {
