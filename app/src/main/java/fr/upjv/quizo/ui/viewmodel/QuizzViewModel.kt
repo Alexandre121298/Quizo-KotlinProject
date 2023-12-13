@@ -1,17 +1,15 @@
 package fr.upjv.quizo.ui.viewmodel
 
-import android.util.Log
-import android.widget.Toast
+//import fr.upjv.quizo.ui.model.QuizzItemUi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-//import fr.upjv.quizo.ui.model.QuizzItemUi
-import fr.upjv.quizo.ui.model.toUI
 import fr.upjv.quizo.data.repository.QuizzRepository
 import fr.upjv.quizo.ui.model.QuizzItemUI
+import fr.upjv.quizo.ui.model.toUI
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.flow.Flow
 
 class QuizzViewModel : ViewModel() {
     private val quizzRepository: QuizzRepository by lazy { QuizzRepository() }

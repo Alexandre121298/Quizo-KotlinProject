@@ -1,6 +1,8 @@
 package fr.upjv.quizo.ui.screen
 
+import android.widget.Toast
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -50,10 +52,10 @@ fun QuizoScreen() {
                             "Reponse C : ${currentItem.reponseC} \n\n" +
                             "Reponse D : ${currentItem.reponseD} \n\n",
                     color = Color.White,
-                    /*modifier = Modifier.clickable {
-                        Box(modifier = Modifier.fillMaxSize()
-                            .clickable { Toast.makeText(context,"Un toast", Toast.LENGTH_LONG) })
-                    }*/
+                    modifier = Modifier.clickable {
+                        val toast = Toast.makeText(context, "C'est une question !", Toast.LENGTH_LONG)
+                        toast.show()
+                    }
                 )
 
                 is QuizzItemUI.Footer -> Text(
