@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -22,6 +23,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import fr.upjv.quizo.ui.theme.Palered
 import fr.upjv.quizo.ui.viewmodel.AuthentViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -77,7 +79,9 @@ fun AuthentScreen(){
                         //TODO Toast here
                     }
 
-                }
+                },
+                colors =  ButtonDefaults.buttonColors(containerColor = Palered),
+
             )
 
             Button(
@@ -92,7 +96,8 @@ fun AuthentScreen(){
                         //Todo Toast here
                     }
 
-                }
+                },
+                colors =  ButtonDefaults.buttonColors(containerColor = Palered),
             )
         }
     }
