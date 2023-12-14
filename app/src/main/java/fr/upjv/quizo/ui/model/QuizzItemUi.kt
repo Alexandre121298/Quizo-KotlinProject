@@ -9,10 +9,10 @@ sealed interface QuizzItemUI
 {
     data class QuizzItem (
         val question: String,
-        val reponseA: String,
-        val reponseB: String,
-        val reponseC: String,
-        val reponseD: String,
+        val reponseA: String?,
+        val reponseB: String?,
+        val reponseC: String?,
+        val reponseD: String?,
     ):QuizzItemUI
 
     data class Header(

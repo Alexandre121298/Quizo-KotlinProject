@@ -18,16 +18,16 @@ data class QuizzEntity(
     val timestamp: Long,
 
     @ColumnInfo(name = "reponse_a")
-    val reponseA: String,
+    val reponseA: String?,
 
     @ColumnInfo(name = "reponse_b")
-    val reponseB: String,
+    val reponseB: String?,
 
     @ColumnInfo(name = "reponse_c")
-    val reponseC: String,
+    val reponseC: String?,
 
     @ColumnInfo(name = "reponse_d")
-    val reponseD: String,
+    val reponseD: String?,
 ){
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0

@@ -22,19 +22,19 @@ data class QuizzDto(
 data class AnswersDto(
     @Expose
     @SerializedName("answer_a")
-    val answerA: String,
+    val answerA: String?,
 
     @Expose
     @SerializedName("answer_b")
-    val answerB: String,
+    val answerB: String?,
 
     @Expose
     @SerializedName("answer_c")
-    val answerC: String,
+    val answerC: String?,
 
     @Expose
     @SerializedName("answer_d")
-    val answerD: String,
+    val answerD: String?,
 )
 
 fun List<QuizzDto>.toRoom(): QuizzEntity {
